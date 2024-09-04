@@ -60,7 +60,8 @@ def printMeny():
     print("----------------------------------------------")
 
     menyvalg = str(("Skriv inn tall for å velge fra menyen: "))
-    utfoerMenyvalg(menyvalg)
+    if menyvalg:
+        utfoerMenyvalg(menyvalg)
 
 def utfoerMenyvalg(valgtTall):
     valgtTall = "1"
