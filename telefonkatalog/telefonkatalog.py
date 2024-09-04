@@ -67,7 +67,6 @@ def printMeny():
     
 
 def utfoerMenyvalg(valgtTall):
-    valgtTall = "1"
     if valgtTall == "1": #input returnerer string, derfor "1"
         registrerPerson()
     elif valgtTall == "2":
