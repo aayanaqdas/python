@@ -59,12 +59,8 @@ def printMeny():
     print("| 6. Avslutt                                 |")
     print("----------------------------------------------")
 
-    menyvalg = "x"
-    while menyvalg != "1":
-        menyvalg = str(input("Skriv inn tall for å velge fra menyen: "))
-        if menyvalg != "x":
-            utfoerMenyvalg(menyvalg)
-    
+    menyvalg = input("Skriv inn tall for å velge fra menyen: ")
+    utfoerMenyvalg(menyvalg)
 
 def utfoerMenyvalg(valgtTall):
     if valgtTall == "1": #input returnerer string, derfor "1"
@@ -86,7 +82,6 @@ def utfoerMenyvalg(valgtTall):
             conn.close()
             exit()
     else: 
-        print("valgTall: ", valgtTall)
         nyttForsoek = input("Ugyldig valg. Velg et tall mellom 1-6: ")
         utfoerMenyvalg(nyttForsoek)
 
