@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 import sqlite3  # Importerer biblioteket SQLite3, som brukes til å jobbe med en SQL-database i Python
 
 conn = sqlite3.connect('telefonkatalog.db') # Vi kobler til en SQLite database med funksjonen connect(). Hvis filen 'telefonkatalog.db' ikke finnes, lages den automatisk
