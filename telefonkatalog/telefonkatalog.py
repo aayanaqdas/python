@@ -71,7 +71,7 @@ def utfoerMenyvalg(valgtTall):
     elif valgtTall == "3":
         visAllePersoner()
     elif valgtTall == "4":
-        #fjernPerson()
+        fjernPerson()
         printMeny()
     elif valgtTall == "5":
         #endreOppføring()
@@ -99,32 +99,35 @@ def registrerPerson():
     input("Trykk en tast for å gå tilbake til menyen")
     printMeny()
 
-# def fjernPerson():
-#     if not telefonkatalog:
-#         print("Det er ingen registrerte personer i katalogen: ")
-#         input("Trykk en tast for å gå tilbake til menyen")
-#         printMeny()
+def fjernPerson():
+    cursor.execute("SELECT * FROM personer")
+    resultater = cursor.fetchall()
+    if not resultater:
+        print("Det er ingen registrerte personer i katalogen: ")
+        input("Trykk en tast for å gå tilbake til menyen")
+        printMeny()
 
-#     else:
-#         print("Fjern registrering: ")
-#         fornavn = input("Skriv inn fornavn: ")
-#         etternavn = input("Skriv inn etternavn: ")
-#         telefonnummer = input("Skriv inn telefonnummer: ")
+    else:
+        print("Fjern registrering: ")
+        fornavn = input("Skriv inn fornavn: ")
+        etternavn = input("Skriv inn etternavn: ")
+        telefonnummer = input("Skriv inn telefonnummer: ")
 
-#     found = False
-#     for person in telefonkatalog:
-#         if person[0] == fornavn and person[1] == etternavn and person[2] == telefonnummer:
-#             found = True
-#             break
+    found = False
+    for person in resultater:
+        if person[0] == fornavn and person[1] == etternavn and person[2] == telefonnummer:
+            found = True
+            break
 
-#     if found:
-#         fjernRegistrering = [fornavn, etternavn, telefonnummer]
-#         telefonkatalog.remove(fjernRegistrering)
-#         print("{0} {1} er fjernet fra katalogen".format(fornavn, etternavn))
-#     else:
-#         print("{0} {1} {2} finnes ikke i katalogen".format(fornavn, etternavn, telefonnummer))
-#         input("Trykk en tast for å gå tilbake til menyen")
-#         printMeny()
+    if found:
+        # fjernRegistrering = [fornavn, etternavn, telefonnummer]
+        # telefonkatalog.remove(fjernRegistrering)
+        slett_person_fra_db(fornavn, etternavn, telefonnummer)
+        print("{0} {1} er fjernet fra katalogen".format(fornavn, etternavn))
+    else:
+        print("{0} {1} {2} finnes ikke i katalogen".format(fornavn, etternavn, telefonnummer))
+        input("Trykk en tast for å gå tilbake til menyen")
+        printMeny()
 
 
 
