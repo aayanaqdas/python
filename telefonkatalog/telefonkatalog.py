@@ -59,7 +59,7 @@ def printMeny():
     print("| 6. Avslutt                                 |")
     print("----------------------------------------------")
 
-    menyvalg = input("Skriv inn tall for å velge fra menyen: ")
+    menyvalg = str(("Skriv inn tall for å velge fra menyen: "))
     utfoerMenyvalg(menyvalg)
 
 def utfoerMenyvalg(valgtTall):
