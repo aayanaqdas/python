@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 
 
 import sqlite3  # Importerer biblioteket SQLite3, som brukes til å jobbe med en SQL-database i Python
