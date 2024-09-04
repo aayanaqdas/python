@@ -61,8 +61,10 @@ def printMeny():
 
     menyvalg = "x"
     while menyvalg != "1":
-        menyvalg = str(("Skriv inn tall for å velge fra menyen: "))
-    utfoerMenyvalg(menyvalg)
+        menyvalg = str(input("Skriv inn tall for å velge fra menyen: "))
+        if menyvalg == "1":
+            utfoerMenyvalg(menyvalg)
+    
 
 def utfoerMenyvalg(valgtTall):
     valgtTall = "1"
