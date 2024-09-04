@@ -63,7 +63,7 @@ def printMeny():
     utfoerMenyvalg(menyvalg)
 
 def utfoerMenyvalg(valgtTall):
-    valgtTall = str(valgtTall).strip()
+    valgtTall = "1"
     if valgtTall == "1": #input returnerer string, derfor "1"
         registrerPerson()
     elif valgtTall == "2":
@@ -83,7 +83,7 @@ def utfoerMenyvalg(valgtTall):
             conn.close()
             exit()
     else: 
-        print(valgtTall)
+        print("valgTall: ", valgtTall)
         nyttForsoek = input("Ugyldig valg. Velg et tall mellom 1-6: ")
         utfoerMenyvalg(nyttForsoek)
 
